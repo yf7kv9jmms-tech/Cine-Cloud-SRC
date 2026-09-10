@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cine-Cloud</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: #050505;
+      color: #f5f5f7;
+    }
+
+    main {
+      text-align: center;
+    }
+
+    button,
+    a {
+      display: inline-block;
+      padding: 0.8rem 1.4rem;
+      border: 1px solid #555;
+      border-radius: 0.5rem;
+      background: #f5f5f7;
+      color: #050505;
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    a {
+      display: none;
+      margin-top: 1rem;
+      background: transparent;
+      color: #f5f5f7;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <button type="button" id="open-app">Open Cine-Cloud</button>
+    <a href="src/index.html" id="fallback">Open Cine-Cloud here</a>
+  </main>
+
+  <script>
+    document.getElementById('open-app').addEventListener('click', function () {
+      var appTab = window.open('about:blank', '_blank');
+
+      if (appTab) {
+        appTab.location.href = 'src/index.html';
+      } else {
+        document.getElementById('fallback').style.display = 'inline-block';
+      }
+    });
+  </script>
+</body>
+</html>
